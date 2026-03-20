@@ -233,3 +233,89 @@ button:active {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+/* Contribution Drawer */
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: var(--card-bg);
+    color: var(--text-main);
+}
+
+.contrib-drawer {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border: 1px dashed var(--glass-border);
+    animation: fadeIn 0.3s ease;
+}
+
+.contrib-drawer.hidden { display: none; }
+
+.contrib-drawer h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.contrib-fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+}
+
+@media (min-width: 600px) {
+    .contrib-fields { grid-template-columns: 1.5fr 1.5fr 1fr auto; }
+}
+
+.contrib-fields select, .contrib-fields input {
+    background: #0f172a;
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 0.8rem;
+    border-radius: 10px;
+    outline: none;
+}
+
+#saveContribBtn {
+    background: var(--accent);
+    color: #0f172a;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user-score-badge {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--card-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.score-value { color: var(--accent); font-weight: 600; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
